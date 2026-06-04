@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>The Touch of your presence (I)</title>
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  background: url("C:/Users/AAYUSH SINGH/Desktop/Sitting-Under-the-Cherry-Blossom-Trees-at-Mount-Yoshino-Nara-(1).jpg") 
+              no-repeat center center fixed;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+}
+
+/* dark overlay */
+body::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0,0,0,0.45); /* adjust opacity: 0.3 = lighter, 0.6 = darker */
+  z-index: 0;
+}
+
+h1 {
+  margin-top: 80px;
+  font-size: 40px;
+  color: white;
+  position: relative;
+  z-index: 1;
+}
+
+#poem {
+  font-size: 26px;
+  font-style: italic;
+  font-weight: normal;
+  color: white;
+  margin-top: 50px;
+  line-height: 1.8;
+  position: relative;
+  z-index: 1;
+}
+</style>
+</head>
+<body>
+
+<h1>The Touch of your presence (I)</h1>
+
+<h2 id="poem"></h2>
+
+<script>
+let lines = [
+  "When I first saw your glowing face, It felt like spring, I saw a beautiful world.",
+  "Your smile can trick and heal, It felt like a weapon stronger than a sword.",
+  "You are a sea of love, a hidden gem, A treasure no one can fully imagine.",
+  "When you tease at dusk and stay in the dark, Your soft touch like a special miracle.",
+  "After meeting you, It's hard to go back home, All I see and feel is your presence everywhere."
+];
+
+let i = 0;
+function showLine() {
+  if (i < lines.length) {
+    document.getElementById("poem").innerHTML += "<br><br>" + lines[i];
+    i++;
+    setTimeout(showLine, 3000); // shows next line after 3 seconds
+  }
+}
+showLine();
+</script>
+
+</body>
+</html>
